@@ -19,6 +19,7 @@ describe('TestCase 2', function() {
         // product is loaded with all the information about brand, prices and stock avilable
   
     });
+    
 
 });
 

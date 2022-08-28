@@ -27,3 +27,5 @@
 import 'cypress-file-upload';
 
 import './commands';
+
+import 'cypress-mochawesome-reporter/register';
