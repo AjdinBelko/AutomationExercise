@@ -5,26 +5,32 @@ describe('TestCase 22', function() {
     //Visit the site of testing 
 
     cy.visit("https://automationexercise.com/");
+
+    cy.url().should("eq",  "https://automationexercise.com/")
     
    // loads on valid
 
+    });
+
+    it('logins to the account', () => {
+    
    cy.xpath("//a[normalize-space()='Signup / Login']").click();
 
-   cy.xpath("//input[@data-qa='login-email']").type('difala3123@rxcay.com');
+   cy.url().should("eq", "https://automationexercise.com/login");
 
-   cy.xpath("//input[@placeholder='Password']").type('tester12345');
+   cy.xpath("//input[@data-qa='login-email']").should('be.empty').type('difala3123@rxcay.com'); 
 
-   cy.xpath("//button[normalize-space()='Login']").click();
-        
+   cy.xpath("//input[@placeholder='Password']").should('be.empty').type('tester12345');
 
-    cy.xpath("//div[@class='item active']//div[1]//div[1]//div[1]//div[1]//a[1]").click();
-
-    cy.xpath("//a[normalize-space()='Cart']//i[@class='fa fa-shopping-cart']").click();
-
+   cy.xpath("//button[normalize-space()='Login']").click()
+   cy.url().should("eq", "https://automationexercise.com/");
+    
 
     });
 
 });
+
+
 
 
 

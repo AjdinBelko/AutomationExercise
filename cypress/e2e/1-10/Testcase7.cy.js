@@ -7,7 +7,8 @@ describe('TestCase 2', function() {
     
    // Clicking on signup button 
 
-        cy.xpath("//a[contains(text(),'Test Cases')]").click();
+        cy.xpath("//a[contains(text(),'Test Cases')]").click()
+        cy.url().should("eq", "https://automationexercise.com/test_cases");
 
     // page navigates to the test cases
   

@@ -5,6 +5,7 @@ describe('TestCase 17', function() {
     //Visit the site of testing 
 
     cy.visit("https://automationexercise.com/");
+    cy.url().should('eq', 'https://automationexercise.com/' );
     
    // navigates to women side
 
@@ -13,6 +14,7 @@ describe('TestCase 17', function() {
     it('switches to products ', () => {
 
         cy.xpath("//a[@href='/products']").click();
+        cy.url().should('eq', 'https://automationexercise.com/products');
 
         //brands are visiable from the left side
 
@@ -32,16 +34,11 @@ describe('TestCase 17', function() {
         cy.xpath("//textarea[@id='review']").type('Best best best best');
         //adds the description of review
 
-        cy.xpath("//button[@id='button-review']").click();
+        cy.xpath("//button[@id='button-review']").should('be.visible').click();
+        cy.url().should('include', 'https://automationexercise.com/product_details/1')
 
         //submits the review & massage is previewed for the user 
 
     });
 
 });
-
-
-
-//done
-
-
